@@ -6,11 +6,11 @@
   <div class="jumbotron">
   
   <h2>Welcome to MedLy</h2>
-  <p> never forget to take your meds again </p>
+  <p> Never forget to take your meds again! </p>
 
   <%if session[:user_id]%>
   <p>Welcome Back, <%=User.find(session[:user_id]).name%></p>
-  
+  <a href="/logout" class="btn btn-warning">Log out</a>
   <%else%>
   
   <a href="/users/new" class="btn btn-primary">Sign up</a>
