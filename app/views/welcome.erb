@@ -8,8 +8,16 @@
   <h2>Welcome to MedLy</h2>
   <p> never forget to take your meds again </p>
 
+  <%if session[:user_id]%>
+  <p>Welcome Back, <%=User.find(session[:user_id]).name%></p>
+  
+  <%else%>
+  
   <a href="/users/new" class="btn btn-primary">Sign up</a>
   <button class="btn btn-secondary">Log in</button>
+  
+  <%end%>
+
   
   </div>
     
