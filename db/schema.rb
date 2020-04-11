@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20200411172946) do
   create_table "medicines", force: :cascade do |t|
     t.string   "name"
     t.string   "reason"
+    t.integer  "user_id"
     t.integer  "interval"
     t.datetime "last_reminder_sent_at"
     t.datetime "created_at",            null: false
