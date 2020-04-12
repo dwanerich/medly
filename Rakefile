@@ -3,6 +3,10 @@ require_relative "./config/environment"
 require "sinatra/activerecord/rake"
 require "active_support/all"
 
+
+
+#Rake File Task Scheduler
+
 namespace :medicine do
   task :send_reminders do
     twilio_account_sid = "AC7bb84371d94f179e144b654b6be9dbc4"
