@@ -1,0 +1,19 @@
+<h3>Add medication</h3>
+
+  <form action="/medicines" method="POST">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name"/>
+        <br>
+
+        <label for="interval">Reminder Interval</label>
+        <input id="interval" type="text" name="interval"/>
+
+        <br>
+
+        <label for="condition">Why are you taking it?</label>
+        <input id="condition" type="text" name="reason"/>
+        <br>
+        <input type="hidden" name="user_id" value="<%=session[:user_id]%>">
+
+        <button class="btn btn-primary" type="submit">Add reminder</button>
+      </form>

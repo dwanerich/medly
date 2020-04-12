@@ -40,7 +40,7 @@
         <ul>
         <% User.find(session[:user_id]).medicines.each do |medicine|%>
         <li>
-        <%= medicine.name%> | every <%= medicine.interval %> minutes
+        <%= medicine.name%> | every <%= medicine.interval %> minutes <a href="/medicines/<%=medicine.id%>/edit">edit</a>
         </li>
         <%end%>
         </ul>
