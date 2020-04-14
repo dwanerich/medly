@@ -1,16 +1,4 @@
-<html>
-<div class="container">
-  
-  <div class="col-md-8 col-md-offset-2">
-
-  
-  <div class="jumbotron">
-  
-  <h2>Welcome to MedLy</h2>
-  <p> Never forget to take your meds again! </p>
-
-
-  <%if Helpers.is_logged_in?(session)%>
+<%if Helpers.is_logged_in?(session)%>
   <p>Welcome, <%=User.find(session[:user_id]).name%>!</p>
   <a href="/logout" class="btn btn-warning">Log out</a>
 
@@ -53,5 +41,3 @@
  <a href="/login" class="btn btn-secondary">Sign in</a>
   
   <%end%>
-
-  </html>
