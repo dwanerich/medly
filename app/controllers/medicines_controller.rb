@@ -23,4 +23,23 @@ class MedicinesController < ApplicationController
         medicine.update(params)
         redirect '/'
     end
+
+    patch '/medicines/:id' do
+        medicine = Medicine.find_by(id: params[:id])
+        if medicine && medicine.user == Helpers.current_user(session)
+            medicine.update(params[:recipe])
+            redirect to "/medicines/#{medicine.id}"
+        else
+            redirect to "/medicines"
+        end
+    end
+
+  delete '/medicines/:id/delete' do
+    medicine = Medicine.find_by(id: params[:id])
+    if medicine && medicine.user == Helpers.current_user(session)
+      medicine.destroy
+    end
+        redirect to '/medicines'
+  end
+
 end

@@ -11,12 +11,12 @@ class SessionsController < ApplicationController
 
 
     post '/login' do
-        user = User.find_by_name(params[:username])
+        user = User.find_by_name(params[:name])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
             redirect to "/users/#{user.id}"
         else
-            redirect to '/signup'
+        redirect to 'users/signup'
         end
     end
 
