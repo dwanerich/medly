@@ -1,0 +1,11 @@
+
+<h1>Medicines</h1>
+
+        <h2><%= User.find(session[:user_id]).medicines.count %></h2>
+        <ul>
+        <% User.find(session[:user_id]).medicines.each do |medicine|%>
+        <li>
+       <h3> <%= medicine.name%> | every <%= medicine.interval %> minutes <a href="/medicines/<%=medicine.id%>/edit">edit</a> </h3>
+        </li>
+        <%end%>
+        </ul>

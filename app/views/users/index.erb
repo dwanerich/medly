@@ -1,5 +1,7 @@
-<h3>All Users</h3>
+<h2>All Users</h2>
 
 <% @users.each do |user| %>
-  <p> <a href="/users/<%=user.id%>"> <%= user.name.capitalize %> </a></p>
+<ul><li>
+  <h4><p> <a href="/users/<%=user.id%>"> <%= user.name.capitalize %> </a></p><h4>
+  </li></ul>
 <%end%>

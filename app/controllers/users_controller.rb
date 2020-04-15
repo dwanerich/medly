@@ -20,7 +20,6 @@ class UsersController < ApplicationController
     end
   end
 
-
     get '/users' do
     if Helpers.is_logged_in?(session)
       @users = User.all

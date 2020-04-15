@@ -1,6 +1,11 @@
 class MedicinesController < ApplicationController
 
 
+    get '/medicines' do
+    @medicines = Medicine.all
+    erb :'medicines/index'
+  end
+
     post '/medicines' do
         medicine = Medicine.create(params)
 
