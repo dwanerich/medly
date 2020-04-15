@@ -10,16 +10,16 @@ class UsersController < ApplicationController
         erb :'users/signup'
     end
 
-
-    # get '/users/new' do
-    #     erb :'/users/new'
-    # end
-
-    post '/users' do
-        user = User.create(params)
-        session[:user_id] = user.id
-        redirect '/'
+    post '/signup' do
+    user = User.create(params)
+    if user.valid?
+      session[:user_id] = user.id
+      redirect to "/users/#{user.id}"
+    else
+      redirect to '/signup'
     end
+  end
+
 
     get '/users' do
     if Helpers.is_logged_in?(session)
@@ -45,7 +45,4 @@ class UsersController < ApplicationController
         redirect '/'
     end
 
-
-
-    
 end
