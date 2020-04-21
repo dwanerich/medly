@@ -3,15 +3,20 @@ MEDLY APP
 MedLy is an application that allows users to create an account for medication adminstration reminders. Features include adding, editing viewing and deleting medications and their interval of administration value.
 
 
-Getting Started
+Getting Started:
 Visit github.com/dwanerich/medly clone the repository to your desktop. Open in your editor and run budle install.
 
-Prerequisites
+Prerequisites:
 Text Editor ie: Atom, VS Code.
+
+Test App:
+Run shotgun in your terminal and copy & paste :9393 local host code into your browser.
+
+"Welcome To Medly!"
+
 
 App Highlights:
 
-:MVC=> {Models, Views, Controllers}
 MVC is a concept which stands for Models, Views, Controllers using the analogy of a restaurant Chef, waiter & costumer to best describe it relationship. MVC also represents a concept we know as separation of concerns.
 
 Model = Chef=> {“Brains Behind”}
@@ -25,7 +30,7 @@ with a relationship of:
 
 :has_many && :belongs_to where Medicine :belongs_to User && User :has_many medicines right?
 
-### RakeDB
+RakeDB:
 
 we create tables for our models via SQLite3 and migrate & mange them via Rake gem. Models are created with their respective corresponding attributes. Our database or Model class and our controller all communicate with one another flowing information back and for creating a robust responsive web application.
 
@@ -55,7 +60,7 @@ this controller is where our create, read, update blocks are created.
 applications_controller < sessions_controller
 here is where we create user login & log out controls.
 
-VALIDATION
+VALIDATION:
 has_secure_password
 validates :password, presence: true
 in our model class we inherit macros from brypt for security and validation. In our app we used the secure password and unique username as a way to control bad data coming into our base.
@@ -72,17 +77,16 @@ SQLite
 Bcrypt
 Whenever
 Twilio-ruby
+Shotgun
 
-Contributing
+Contributing:
 Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
-Authors
+Author:
 Dwane Richards
 
-License
+License:
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
-Acknowledgments
-Hat tip to anyone whose code was used
-Inspiration
-etc
+Acknowledgments:
+Hat tip to my Flatiron School technical lead Annabel Wilmerding, career coach Andrew Della Rocca, all the TA's & my 12/9 Pryercracker cohort.
