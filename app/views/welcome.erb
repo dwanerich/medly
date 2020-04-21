@@ -1,21 +1,17 @@
 <html>
-<div class="container">
-  
-  <div class="col-md-8 col-md-offset-2">
 <br><br><br><br><br>
-  
-  <div class="jumbotron">
-  
+
+<div class="col-md-8 col-md-offset-2">
+<div class="jumbotron">
+<div class="container">
+
   <h2>Welcome to Medly!</h2>
-  <p> Never forget to take your meds again! </p>
+  <p>Never forget to take your meds again.</p>
 
 
   <%if Helpers.is_logged_in?(session)%>
-  <p>Welcome, <%=User.find(session[:user_id]).name%>!</p>
-  <a href="/logout" class="btn btn-secondary">Log out</a>
-  <a href="/delete" class="btn btn-danger">Delete account</a>
+  <p>Welcome, <%=User.find(session[:user_id]).name.capitalize%>!</p>
   
-
   <br><br><br>
 
   <h3>Add a new medication</h3>
@@ -48,6 +44,8 @@
         </li>
         <%end%>
         </ul>
+
+        <a href="#" class="btn btn-danger">Delete account</a>
 
   <%else%>
   

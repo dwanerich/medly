@@ -32,7 +32,7 @@ class MedicinesController < ApplicationController
     patch '/medicines/:id' do
         medicine = Medicine.find_by(id: params[:id])
         if medicine && medicine.user == Helpers.current_user(session)
-            medicine.update(params[:recipe])
+            medicine.update(params[:medicine])
             redirect to "/medicines/#{medicine.id}"
         else
             redirect to "/medicines"

@@ -4,6 +4,7 @@
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
   <header>
+  
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/">MEDLY</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,16 +13,17 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/about">About<span class="sr-only">(current)</span></a>
+      </li>
+      <%if Helpers.is_logged_in?(session)%>
+      <li class="nav-item">
+        <a class="nav-link" href="/users">Users</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
-      </li>
-      <%# <li class="nav-item">
         <a class="nav-link" href="/logout">Log out</a>
-      </li> %>
-      
+      </li>
     </ul>
+    <%end%>
   </div>
 </nav>
   
@@ -45,6 +47,7 @@
   <body style="background-image: url('https://www.cookfamilyhealthcenter.com/content/uploads/2019/09/Medication.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 </div>
     <div class="container">
+
     
 
         <%= yield %>

@@ -1,8 +1,11 @@
-<%if Helpers.is_logged_in?(session)%>
-  <p>Welcome, <%=User.find(session[:user_id]).name%>!</p>
-  <a href="/logout" class="btn btn-secondary">Log out</a> <a href="#" class="btn btn-danger">Delete account</a>
+<br><br><br>
+  <div class="col-md-8 col-md-offset-2">
+<div class="jumbotron">
+<div class="container">
 
-  <br><br><br>
+<%if Helpers.is_logged_in?(session)%>
+  <p>Welcome, <%=User.find(session[:user_id]).name.capitalize%>!</p>
+  
 
   <h3>Add a new medication</h3>
 
@@ -23,6 +26,7 @@
 
         <button class="btn btn-primary" type="submit">Add reminder</button>
       </form>
+        <br><br>
 
         <h2>My Reminders</h2>
 
@@ -34,6 +38,8 @@
         </li>
         <%end%>
         </ul>
+
+        <p><a href="#" class="btn btn-danger">Delete account</a></p>
 
   <%else%>
   

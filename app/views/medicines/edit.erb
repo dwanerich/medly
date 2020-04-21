@@ -1,8 +1,14 @@
+<br><br><br><br><br>
+
+<div class="col-md-8 col-md-offset-2">
+<div class="jumbotron">
+<div class="container">
+
 <h3>Edit medication</h3>
 
   <form action="/medicines/<%=@medicine.id%>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <button class="btn btn-primary" type="submit" value="submit">Delete</button>
+    <button class="btn btn-danger" type="submit" value="submit">Delete</button>
   </form> 
   <br>
 
@@ -22,6 +28,6 @@
         <input type="hidden" name="user_id" value="<%=session[:user_id]%>">
 
 
-        <button class="btn btn-primary" type="submit">Edit reminder</button>
+        <button class="btn btn-primary" type="submit">Update</button>
 
    </form>
