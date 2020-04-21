@@ -1,6 +1,15 @@
+MEDLY APP
+
 MedLy is an application that allows users to create an account for medication adminstration reminders. Features include adding, editing viewing and deleting medications and their interval of administration value.
 
-Below entails some technical detail and concepts for which this app was build. I found that building this project was best executed by breaking it down into several parts and putting it all back together.
+
+Getting Started
+Visit github.com/dwanerich/medly clone the repository to your desktop. Open in your editor and run budle install.
+
+Prerequisites
+Text Editor ie: Atom, VS Code.
+
+App Highlights:
 
 :MVC=> {Models, Views, Controllers}
 MVC is a concept which stands for Models, Views, Controllers using the analogy of a restaurant Chef, waiter & costumer to best describe it relationship. MVC also represents a concept we know as separation of concerns.
@@ -56,4 +65,24 @@ Time.now <= last_time_reminded_at`
 
 At at point user can delete their medication or edit name, condition they’re taking medication for and the interval.”
 
-end
+Built With:
+Sinatra - Framework
+ActiveRecord 4.2.6
+SQLite
+Bcrypt
+Whenever
+Twilio-ruby
+
+Contributing
+Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+
+Authors
+Dwane Richards
+
+License
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
+Acknowledgments
+Hat tip to anyone whose code was used
+Inspiration
+etc
