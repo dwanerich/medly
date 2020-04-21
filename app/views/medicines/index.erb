@@ -1,11 +1,16 @@
+<br><br><br><br><br><br>
 
-<h1>Medicines</h1>
+<div class="col-md-8 col-md-offset-2">
+<div class="jumbotron">
+<div class="container">
 
-        <h2><%= User.find(session[:user_id]).medicines.count %></h2>
+<h2>My Meds</h2>
+
+        <h3><%= User.find(session[:user_id]).medicines.count %></h3>
         <ul>
         <% User.find(session[:user_id]).medicines.each do |medicine|%>
         <li>
-       <h3> <%= medicine.name%> | every <%= medicine.interval %> minutes <a href="/medicines/<%=medicine.id%>/edit">edit</a> </h3>
+       <h4> <%= medicine.name%> | every <%= medicine.interval %> minutes <a href="/medicines/<%=medicine.id%>/edit">edit</a> </h4>
         </li>
         <%end%>
         </ul>

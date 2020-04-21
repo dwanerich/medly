@@ -6,10 +6,6 @@
 
 <h3>Edit medication</h3>
 
-  <form action="/medicines/<%=@medicine.id%>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <button class="btn btn-danger" type="submit" value="submit">Delete</button>
-  </form> 
   <br>
 
   <form action="/medicines/<%= @medicine.id %>" method="POST">
@@ -29,5 +25,8 @@
 
 
         <button class="btn btn-primary" type="submit">Update</button>
+        
+        <input type="hidden" name="_method" value="delete">
+        <button class="btn btn-danger" type="submit" value="submit">Delete</button>
 
    </form>
