@@ -39,9 +39,4 @@ class UsersController < ApplicationController
     erb :'users/show'
   end
 
-    get '/delete' do
-        session.clear
-        redirect '/'
-    end
-
 end

@@ -32,7 +32,7 @@ with a relationship of:
 
 RakeDB:
 
-we create tables for our models via SQLite3 and migrate & mange them via Rake gem. Models are created with their respective corresponding attributes. Our database or Model class and our controller all communicate with one another flowing information back and for creating a robust responsive web application.
+we create tables for our models via SQLite3 and migrate & manage them via Rake gem. Models are created with their respective corresponding attributes. Our database or Model class and our controller all communicate with one another flowing information back and for creating a robust responsive web application.
 
 Class CreateUsers < ActiveRecord::Migration
   def change

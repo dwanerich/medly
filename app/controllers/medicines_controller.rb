@@ -12,22 +12,22 @@ class MedicinesController < ApplicationController
         redirect '/'
     end
 
+    get '/medicines/:id' do
+    if !Helpers.is_logged_in?(session)
+      redirect '/'
+    end
+    @medicine = Medicine.find_by(id: params[:id])
+    if !@medicine
+      redirect to '/'
+    end
+    erb :"/users/show"
+  end
+
     get '/medicines/:id/edit' do
         @medicine = Medicine.find(params[:id])
         erb :'medicines/edit'
     end
 
-    delete '/medicines/:id' do
-        medicine = Medicine.find(params[:id])
-        medicine.destroy
-        redirect '/'
-    end
-
-    post '/medicines/:id' do
-        medicine = Medicine.find(params[:id])
-        medicine.update(params)
-        redirect '/'
-    end
 
     patch '/medicines/:id' do
         medicine = Medicine.find_by(id: params[:id])
@@ -38,6 +38,7 @@ class MedicinesController < ApplicationController
             redirect to "/medicines"
         end
     end
+    
 
   delete '/medicines/:id/delete' do
     medicine = Medicine.find_by(id: params[:id])
