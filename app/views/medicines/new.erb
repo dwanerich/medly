@@ -1,5 +1,17 @@
 <h3>Add medication</h3>
 
+<%if @medicine.errors.any?%>
+<% @medicine.errors %>
+
+<ul>
+    <% @medicine.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
   <form action="/medicines" method="POST">
         <label for="name">Name</label>
         <input id="name" type="text" name="name"/>

@@ -8,4 +8,7 @@ class Helpers
     session[:user_id] ? true : false
   end
 
+  def self.is_authorized
+    
+
 end

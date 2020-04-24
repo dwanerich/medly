@@ -2,26 +2,32 @@ class MedicinesController < ApplicationController
 
 
     get '/medicines' do
-    @medicines = Medicine.all
-    erb :'medicines/index'
-  end
+      @medicines = Medicine.all
+      erb :'medicines/index'
+    end
 
     post '/medicines' do
-        medicine = Medicine.create(params)
+      
+        @medicine = Medicine.new(params)
+        if @medicine.save
 
         redirect '/'
+
+        else
+          erb :'/medicines/new'
+        end
     end
 
     get '/medicines/:id' do
-    if !Helpers.is_logged_in?(session)
-      redirect '/'
+        if !Helpers.is_logged_in?(session)
+          redirect '/'
+        end
+        @medicine = Medicine.find_by(id: params[:id])
+        if !@medicine
+          redirect to '/'
+        end
+        erb :"/users/show"
     end
-    @medicine = Medicine.find_by(id: params[:id])
-    if !@medicine
-      redirect to '/'
-    end
-    erb :"/users/show"
-  end
 
     get '/medicines/:id/edit' do
         @medicine = Medicine.find(params[:id])
@@ -40,12 +46,11 @@ class MedicinesController < ApplicationController
     end
     
 
-  delete '/medicines/:id/delete' do
-    medicine = Medicine.find_by(id: params[:id])
+    delete '/medicines/:id/delete' do
+      medicine = Medicine.find_by(id: params[:id])
     if medicine && medicine.user == Helpers.current_user(session)
       medicine.destroy
     end
-        redirect to '/medicines'
-  end
-
+      redirect to '/medicines'
+    end
 end
