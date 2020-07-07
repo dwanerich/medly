@@ -9,6 +9,7 @@ class Helpers
   end
 
   def self.is_authorized
+  end
     
 
 end

@@ -17,6 +17,6 @@ gem "twilio-ruby"
 group :test do
   gem 'rspec'
   gem 'capybara'
-  gem 'rack-test'
+  gem 'rack-test', '~2.2.3'
   gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
 end
